@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <title>检验科管理系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="date-css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="date-css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>
+    <script type="text/javascript" src="dashboard.js"></script>
+
+    <script type="text/javascript" src="date-js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="date-js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+
+  </head>
+
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- 系统名称 -->
+        <div class="navbar-header">
+          <h1 class="system-title" >山东中医药高等专科学校附属医院检验科系统</h1>
+        </div>
+
+        <!-- 选择机器型号 &帮助 -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="check-date">日期：</li>
+            <li class="check-date-value">
+              <input type="text" value="2012-05-15" id="datetimepicker" class="form-control">
+             
+            </li>
+            <li class="device-type">仪器类别: </li>
+            <li class="device">
+              <select class="form-control" onchange="selectChange()">
+                <option>血球仪</option>
+                <option>生化仪</option>
+                <option>尿液分析仪</option>
+              </select>
+            </li>
+            <li><a href="#">帮助</a></li>
+            <li>123</li>
+          </ul>          
+        </div><!-- 选择机器型号 &帮助 -->
+      </div>
+    </div>
+
+    <div class="container-fluid">
+   
+        <!-- 左边姓名列表 -->
+        <div class="col-sm-3  sidebar">
+          <h2 class="sub-header">样本列表</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>样本号</th>
+                  <th>姓名</th>
+                  <th>性别</th>
+                  <th>年龄</th>
+                </tr>
+              </thead>
+              <tbody>
+               
+                <tr>
+                  <td>1</td>
+                  <td>张三</td>
+                  <td>男</td>
+                  <td>56</td>
+                </tr>
+                
+                <tr>
+                  <td>2</td>
+                  <td>李四</td>
+                  <td>女</td>
+                  <td>78</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- 样本信息 结果：1，文字列表结果2，图片 -->
+        <div class="col-sm-9 col-sm-offset-3 main">
+          <h3 class="page-header">样本信息</h3>
+          <h4>样本号：1</h4>
+          <div class="input-group">
+              <span class="input-group-addon" id="sizing-addon2">患者姓名</span>
+              <input type="text" class="form-control" width="100px" aria-describedby="sizing-addon2">
+              <span class="input-group-addon" id="sizing-addon2"> 患者性别  </span>
+               <select class="form-control" onchange="selectChange()">
+                  <option>男</option>
+                  <option>女</option>
+                </select>
+              
+              <span class="input-group-addon" id="sizing-addon2">  &nbsp;年龄&nbsp;  </span>
+              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+              <span class="input-group-addon" id="sizing-addon2">  门诊号</span>
+              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+              <span class="input-group-addon" id="sizing-addon2">  &nbsp;住院号</span>
+              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+              <span class="input-group-addon" id="sizing-addon2">床号</span>
+              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+          </div> <!-- 样本信息第一行-->
+          <div class="input-group">
+              <span class="input-group-addon" id="sizing-addon2">送检科室</span>
+              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+              <span class="input-group-addon" id="sizing-addon2">送检医生</span>
+              <input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon2">
+              <span class="input-group-addon" id="sizing-addon2">检验日期</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
+              <span class="input-group-addon" id="sizing-addon2">检验时间</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
+              <span class="input-group-addon" id="sizing-addon2">送检时间</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
+              <span class="input-group-addon" id="sizing-addon2">备注</span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon2">
+          </div><!-- 样本信息第二行-->
+
+          <h3 class="sub-header">结果</h3>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>项目代号</th>
+                  <th>项目名称</th>
+                  <th>项目结果</th>
+                  <th>项目单位</th>
+                  <th>参考范围</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>WBC</td>
+                  <td>白细胞</td>
+                  <td>10</td>
+                  <td>cell/ul</ul></td>
+                  <td>0-20</td>
+                </tr>
+               
+               
+                
+                <tr>
+                  <td>RBC</td>
+                  <td>红细胞</td>
+                  <td>5</td>
+                  <td>Cell/ul</ul></td>
+                  <td>0-10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div><!-- table Div 结束-->
+
+        </div>
+      </div>
+    
+     <script src="../../dist/js/bootstrap.min.js"></script>
+     <script src="http://libs.baidu.com/bootstrap/3.0.3/js/docs.min.js"></script>
+  </body>
+</html>
